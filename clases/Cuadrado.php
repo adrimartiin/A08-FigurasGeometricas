@@ -1,19 +1,15 @@
 <?php
 
 class Cuadrado extends FigurasGeometricas {
-    public $lado;
-
-    public function __construct($nombreFigura, $lado) {
-        parent::__construct($nombreFigura);
-        $this->lado = $lado;
-    }
+   
+    // No se necesita el constructor en esta clase ya que solo se trabaja con un lado (ya que un cuadrado tiene todos los lados iguales) y lo hereda de  la clase padre
 
     public function calculaAreaCuadrado(){
-        return $this->lado * $this->lado;
+        return $this->lado1 * $this->lado1;
     }
 
     public function calculaPerimetroCuadrado(){
-        return 4 * $this->lado;
+        return 4 * $this->lado1;
     }
 
     public function __toString(){
