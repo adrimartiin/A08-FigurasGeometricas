@@ -7,29 +7,36 @@
     <title>Document</title>
 </head>
 <body>
+
 <div class="container">
     <div class="main-title">
         <h2 class="fira-sans-condensed-extralight">Figuras Geométricas</h2>
     </div>
-
+    
+    <form action = "./proc/procFigs.php" method="post">
     <div class="inputs-container">
+        
         <div class="container-cuadrado">
-            <input type="button" class="add-cuadrado">
+            <input type="button" name="figura" class="add-cuadrado">
         </div>
 
         <div class="container-triangulo">
-            <input type="button" class="add-triangulo">
+            <input type="button" name="figura"  class="add-triangulo">
         </div>
 
         <div class="container-circulo">
-            <input type="button" class="add-circulo">
+            <input type="button" name="figura" class="add-circulo">
         </div>
 
         <div class="container-rectangulo">
-            <input type="button" class="add-rectangulo">
+            <input type="button" name="figura"  class="add-rectangulo">
         </div>
     </div>
+    </form>
+    
+
 </div>
+
 
 
 </body>
