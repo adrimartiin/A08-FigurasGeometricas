@@ -1,5 +1,5 @@
 <?php
-
+require_once('FigurasGeometricas.php');
 class Cuadrado extends FigurasGeometricas {
    
     // No se necesita el constructor en esta clase ya que solo se trabaja con un lado (ya que un cuadrado tiene todos los lados iguales) y lo hereda de  la clase padre
