@@ -32,4 +32,9 @@ class Triangulo extends FigurasGeometricas {
     public function __toString(){
         return "El área del triángulo es: " . $this->calculaAreaTriangulo() . ", y el perímetro es: ". $this->calculaPerimetroTriangulo();
     }
+
+    public function __destruct(){
+        return "Triángulo destruido";
+    }
+
 }
