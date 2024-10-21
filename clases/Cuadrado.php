@@ -1,9 +1,10 @@
 <?php
 require_once('FigurasGeometricas.php');
 class Cuadrado extends FigurasGeometricas {
-   
-    // No se necesita el constructor en esta clase ya que solo se trabaja con un lado (ya que un cuadrado tiene todos los lados iguales) y lo hereda de  la clase padre
 
+    public function __construct($lado) {
+        parent::__construct($lado, $lado); // Llama al constructor de la clase padre con dos lados iguales
+    }
     public function calculaAreaCuadrado(){
         return $this->lado1 * $this->lado1;
     }
