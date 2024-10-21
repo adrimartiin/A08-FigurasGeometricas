@@ -2,7 +2,10 @@
 
 require_once ('FigurasGeometricas.php');
 class Circulo extends FigurasGeometricas {
-    // en esta clase no hace falta constructor ya que se trabaja con un valor (radio) que se hereda de la clase padre
+
+    public function __construct($lado) {
+        parent::__construct($lado, $lado); // Llama al constructor de la clase padre con lados iguales
+    }
 
     public function calcularAreaCirculo() {
         // uso la funcion m_pi para sacar el num pi
@@ -19,6 +22,6 @@ class Circulo extends FigurasGeometricas {
     }
 
     public function __destruct() {
-        echo "Circulo destruido";
+        return "Circulo destruido";
     }
 }
