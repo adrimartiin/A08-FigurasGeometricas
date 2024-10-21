@@ -47,7 +47,6 @@
                         echo "<p>Área: ". $rectangulo->calcularAreaRectangulo(). "</p>";
                         echo "<p>Perímetro: ". $rectangulo->calcularPerimetroRectangulo(). "</p>";
                         break;
-                    default:
                 }
             } else {
                 echo "<p>No se ha seleccionado ninguna figura</p>";
