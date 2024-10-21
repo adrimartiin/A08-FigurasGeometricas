@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../scripts/script.js"></script>
     <link rel="stylesheet" href="../css/styles.css">
     <title>Figura Seleccionada</title>
 </head>
@@ -9,7 +10,7 @@
     <div class="container">
         
         <div class="result-container">
-            <form action="../resultados.php" method="post">
+            <form action="../resultados.php" method="post" onsubmit="return ValidaForm()">
             <?php
                 if(isset($_POST['figura'])){
                     $figuraSeleccionada = $_POST['figura'];
@@ -19,29 +20,46 @@
                     switch ($figuraSeleccionada){
                         case 'cuadrado':
                             echo "<input type='hidden' name='figura' value='cuadrado'>";
-                            echo "<input type='number' name='lado' step='0.01' placeholder='Introduce el lado'><br><br>";
+                            echo "<label for='num'><strong>Lado del Cuadrado:</strong></label>";
+                            echo "<input type='number' id='num' name='lado' step='0.01' placeholder='Introduce el lado' onblur='ValidaNum()'>";
+                            echo "<span id='error' class='error'></span>";
                             echo "<input type='submit' value='Calcular'>";
+                            
                         break;
-
+                        
+                        // Validacion diferente a la de un solo input 
                         case 'triangulo': 
                             echo "<input type='hidden' name='figura' value='triangulo'>";
-                            echo "<input type='number' name='lado1' step='0.01' placeholder='Introduce el primer lado'><br>";
-                            echo "<input type='number' name='lado2' step='0.01' placeholder='Introduce el segundo lado'><br>";
-                            echo "<input type='number' name='lado3' step='0.01' placeholder='Introduce el tercer lado'><br>";
+                            echo "<label for='triangulo'><strong>Lado 1 del Triangulo (Este dato afectará al cálculo de área y perímetro):</strong></label>";
+                            echo "<input type='number' id='triangulo' name='lado1' step='0.01' id='num' placeholder='Introduce el primer lado'><br>";
+                            echo "<label for='triangulo'><strong>Lado 2 del Triangulo: (Este dato afectará al cálculo de área y perímetro):</strong></label>";
+                            echo "<input type='number' id='triangulo' name='lado2' step='0.01' id='num' placeholder='Introduce el segundo lado'><br>";
+                            echo "<label for='triangulo'><strong>Lado 3 del Triangulo: (Este dato afectará al cálculo del perímetro):</strong></label>";
+                            echo "<input type='number' id='triangulo' name='lado3' step='0.01' id='num' placeholder='Introduce el tercer lado'><br>";
+                            echo "<span id='error_triangulo' class='error'></span>";
                             echo "<input type='submit' value='Calcular'>";
+                            
                         break;
-
+                        
                         case 'circulo':
                             echo "<input type='hidden' name='figura' value='circulo'>";
-                            echo "<input type='number' name='radio' step='0.01' placeholder='Introduce el radio del circulo'><br><br>";
+                            echo "<label><strong> Radio del Circulo:</strong></label>";
+                            echo "<input type='number' name='radio' step='0.01' placeholder='Introduce el radio del circulo' id='num' onblur='ValidaNum()'><br><br>";
+                            echo "<span id='error' class='error'></span>";
                             echo "<input type='submit' value='Calcular'>";
+                            ;
                         break;
-
+                        
+                        // Validacion diferente a la de un solo input
                         case 'rectangulo':
                             echo "<input type='hidden' name='figura' value='rectangulo'>";
-                            echo "<input type='number' name='base' step='0.01' placeholder='Introduce la base del rectangulo'><br><br>";
-                            echo "<input type='number' name='altura' step='0.01' placeholder='Introduce la altura del rectangulo'><br><br>";
+                            echo "<label><strong>Base del Rectangulo:</strong></label>";
+                            echo "<input type='number' name='base' step='0.01' placeholder='Introduce la base del rectangulo' id='num'><br><br>";
+                            echo "<label><strong> Altura del Rectangulo:</strong></label>";
+                            echo "<input type='number' name='altura' step='0.01' placeholder='Introduce la altura del rectangulo' id='num'><br><br>";
+                            echo "<span id='error' class='error'></span>";
                             echo "<input type='submit' value='Calcular'>";
+                            
                         break;
                     }
                     echo "</div>"; 
