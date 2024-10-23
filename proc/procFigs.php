@@ -10,7 +10,7 @@
     <div class="container">
         
         <div class="result-container">
-            <form action="../resultados.php" method="post" onsubmit="return ValidaForm()">
+            <form action="../resultados.php" method="post" onsubmit="ValidaForm(event)">
             <?php
                 if(isset($_POST['figura'])){
                     $figuraSeleccionada = $_POST['figura'];
@@ -31,11 +31,11 @@
                         case 'triangulo': 
                             echo "<input type='hidden' name='figura' value='triangulo'>";
                             echo "<label for='triangulo'><strong>Lado 1 del Triangulo (Este dato afectará al cálculo de área y perímetro):</strong></label>";
-                            echo "<input type='number' id='triangulo' name='lado1' step='0.01' id='num' placeholder='Introduce el primer lado'><br>";
+                            echo "<input type='number' id='triangulo' name='lado1' step='0.01' id='num' placeholder='Introduce el primer lado' onblur='ValidaTriangulo()'><br>";
                             echo "<label for='triangulo'><strong>Lado 2 del Triangulo: (Este dato afectará al cálculo de área y perímetro):</strong></label>";
-                            echo "<input type='number' id='triangulo' name='lado2' step='0.01' id='num' placeholder='Introduce el segundo lado'><br>";
+                            echo "<input type='number' id='triangulo' name='lado2' step='0.01' id='num' placeholder='Introduce el segundo lado' onblur='ValidaTriangulo()'><br>";
                             echo "<label for='triangulo'><strong>Lado 3 del Triangulo: (Este dato afectará al cálculo del perímetro):</strong></label>";
-                            echo "<input type='number' id='triangulo' name='lado3' step='0.01' id='num' placeholder='Introduce el tercer lado'><br>";
+                            echo "<input type='number' id='triangulo' name='lado3' step='0.01' id='num' placeholder='Introduce el tercer lado' onblur='ValidaTriangulo()'><br>";
                             echo "<span id='error_triangulo' class='error'></span>";
                             echo "<input type='submit' value='Calcular'>";
                             
@@ -44,7 +44,7 @@
                         case 'circulo':
                             echo "<input type='hidden' name='figura' value='circulo'>";
                             echo "<label><strong> Radio del Circulo:</strong></label>";
-                            echo "<input type='number' name='radio' step='0.01' placeholder='Introduce el radio del circulo' id='num' onblur='ValidaNum()'><br><br>";
+                            echo "<input type='number' id='num' name='radio' step='0.01' placeholder='Introduce el radio del circulo' onblur='ValidaNum()'>";
                             echo "<span id='error' class='error'></span>";
                             echo "<input type='submit' value='Calcular'>";
                             ;
@@ -54,10 +54,11 @@
                         case 'rectangulo':
                             echo "<input type='hidden' name='figura' value='rectangulo'>";
                             echo "<label><strong>Base del Rectangulo:</strong></label>";
-                            echo "<input type='number' name='base' step='0.01' placeholder='Introduce la base del rectangulo' id='num'><br><br>";
+                            echo "<input type='number' id='base' name='base' step='0.01' placeholder='Introduce la base del rectangulo' onblur='ValidaBaseRectangulo()'><br>";
+                            echo "<span id='error_rectangulo' class='error'></span>";
                             echo "<label><strong> Altura del Rectangulo:</strong></label>";
-                            echo "<input type='number' name='altura' step='0.01' placeholder='Introduce la altura del rectangulo' id='num'><br><br>";
-                            echo "<span id='error' class='error'></span>";
+                            echo "<input type='number' id='altura' name='altura' step='0.01' placeholder='Introduce la altura del rectangulo' onblur='ValidaAlturaRectangulo()'><br>";
+                            echo "<span id='error_rectangulo2' class='error'></span>";
                             echo "<input type='submit' value='Calcular'>";
                             
                         break;
