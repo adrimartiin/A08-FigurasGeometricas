@@ -9,8 +9,8 @@ body {
 }
 
 .container {
-    width: 60%;
-    height: 60%;
+    width: 70%;
+    height: 70%;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -96,6 +96,7 @@ img {
     margin-top: 20px;
     text-align: center;
     width: 100%;
+    
 }
 
 .figure-title {
@@ -136,6 +137,8 @@ input[type="submit"]:hover {
 .error{
     color: red;
 }
-
+.error-input{
+    border: 2px solid red !important;
+}
 
 
