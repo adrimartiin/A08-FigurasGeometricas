@@ -26,29 +26,81 @@ function ValidaNum() {
     }
 }
 
-// function ValidaTriangulo(){
-//     let triangulo = document.getElementById("triangulo").value;
-//     let inputTriangulo = document.getElementById("triangulo");
-//     let error = document.getElementById("error_triangulo");
+ function ValidaTrianguloLado1(){
+ if (document.getElementById("lado1") == null) return true;
+ let lado1 = document.getElementById("lado1").value;
+ let inputLado1 = document.getElementById("lado1");
+ let error = document.getElementById("error_triangulo1");
 
-//     if (triangulo == "") {
-//         error.innerHTML = "El campo no debe estar vacío";
-//         inputTriangulo.classList.add('error-input');
-//         return false;
-//     } if(isNaN(triangulo)){ 
-//         error.innerHTML = "El campo debe ser un número";
-//         inputTriangulo.classList.add('error-input');
-//         return false;
-//     } else if (triangulo <= 0) {
-//         error.innerHTML = "Para operar con el campo se debe ingresar un número mayor a 0";
-//         inputTriangulo.classList.add('error-input');
-//         return false;
-//     } else {
-//         error.innerHTML = "";
-//         inputTriangulo.classList.remove('error-input');
-//         return true;
-//     }
-// }
+
+    if (lado1 == "") {
+        error.innerHTML = "El campo no debe estar vacío";
+        inputLado1.classList.add('error-input');
+        return false;
+    } if (isNaN(lado1)) {
+        error.innerHTML = "El campo debe ser un número";
+        inputLado1.classList.add('error-input');
+        return false;
+    } else if (lado1 <= 0) {
+        error.innerHTML = "Para operar con el campo se debe ingresar un número mayor a 0";
+        inputLado1.classList.add('error-input');
+        return false;
+    } else {
+        error.innerHTML = "";
+        inputLado1.classList.remove('error-input');
+        return true;
+}
+}
+
+function ValidaTrianguloLado2(){
+    if (document.getElementById("lado2") == null) return true;
+    let lado2 = document.getElementById("lado2").value;
+    let inputLado2 = document.getElementById("lado2");
+    let error = document.getElementById("error_triangulo2");
+    
+    if (lado2 == "") {
+        error.innerHTML = "El campo no debe estar vacío";
+        inputLado2.classList.add('error-input');
+        return false;
+    } if (isNaN(lado2)) {
+        error.innerHTML = "El campo debe ser un número";
+        inputLado2.classList.add('error-input');
+        return false;
+    } else if (lado2 <= 0) {
+        error.innerHTML = "Para operar con el campo se debe ingresar un número mayor a 0";
+        inputLado2.classList.add('error-input');
+        return false;
+    } else {
+        error.innerHTML = "";
+        inputLado2.classList.remove('error-input');
+        return true;
+    }
+}
+
+function ValidaTrianguloLado3(){
+    if (document.getElementById("lado3") == null) return true;
+    let lado3 = document.getElementById("lado3").value;
+    let inputLado3 = document.getElementById("lado3");
+    let error = document.getElementById("error_triangulo3");
+    
+    if (lado3 == "") {
+        error.innerHTML = "El campo no debe estar vacío";
+        inputLado3.classList.add('error-input');
+        return false;
+    } if (isNaN(lado3)) {
+        error.innerHTML = "El campo debe ser un número";
+        inputLado3.classList.add('error-input');
+        return false;
+    } else if (lado3 <= 0) {
+        error.innerHTML = "Para operar con el campo se debe ingresar un número mayor a 0";
+        inputLado3.classList.add('error-input');
+        return false;
+    } else {
+        error.innerHTML = "";
+        inputLado3.classList.remove('error-input');
+        return true;
+    }
+}
 
 function ValidaBaseRectangulo() {
     if (document.getElementById("base") == null) return true;
@@ -103,8 +155,8 @@ function ValidaAlturaRectangulo() {
 }
 
 function ValidaForm(e) {
-    if (ValidaNum() && ValidaBaseRectangulo() && ValidaAlturaRectangulo()){
-        return ValidaNum() && ValidaBaseRectangulo() && ValidaAlturaRectangulo();
+    if (ValidaNum() && ValidaBaseRectangulo() && ValidaAlturaRectangulo() && ValidaTrianguloLado1() && ValidaTrianguloLado2() && ValidaTrianguloLado3()){
+        return ValidaNum() && ValidaBaseRectangulo() && ValidaAlturaRectangulo() && ValidaTrianguloLado1() && ValidaTrianguloLado2() && ValidaTrianguloLado3();
     } else {
         e.preventDefault();
         return false;
