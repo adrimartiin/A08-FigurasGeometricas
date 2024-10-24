@@ -134,11 +134,63 @@ input[type="submit"]:hover {
     background-color: #0f388b;
 }
 
-.error{
+.error {
     color: red;
 }
-.error-input{
+
+.error-input {
     border: 2px solid red !important;
 }
+
+
+.result-box {
+    background-color: #f1f8ff; 
+    border: 1px solid #007BFF; 
+    border-radius: 8px; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 90%;            
+    min-height: 150px;    
+    display: flex;        
+    flex-direction: column; 
+    align-items: center;  
+}
+
+
+
+.result-box p {
+    font-size: 18px; 
+    margin: 10px 0; 
+    
+}
+
+
+.link-container {
+    text-align: center; 
+}
+
+.btn-link {
+    display: inline-block; 
+    background-color: #007BFF; 
+    color: #fff; 
+    text-decoration: none; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    margin: 10px 5px; 
+    font-size: 16px; 
+    transition: background-color 0.3s ease; 
+}
+
+
+.btn-link:hover {
+    background-color: #0056b3; 
+}
+
+
+
+
+
+
 
 
