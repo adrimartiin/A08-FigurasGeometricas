@@ -17,7 +17,10 @@
             
             if(isset($_SESSION['figura'])){
                 $figura = $_SESSION['figura'];
-                echo "<h2 class='figure-title'>Cálculo de área y perímetro de la figura:" . ucfirst($figura) . "</h2>";
+                echo "<h2 class='figure-title'>Cálculo de área y perímetro de la figura: " . ucfirst($figura) . "</h2>";
+                
+                echo "<div class='result-box'>";  
+
                 switch ($figura){
                     case 'cuadrado':
                         if(isset($_SESSION['lado'])){
@@ -26,8 +29,6 @@
                         $cuadrado = new Cuadrado($lado);
                         echo "<p>Área: ". $cuadrado->calculaAreaCuadrado(). "</p>";
                         echo "<p>Perímetro: ". $cuadrado->calculaPerimetroCuadrado(). "</p>";
-                        echo "<a href='./proc/procCierraSesion.php' class='links'>Volver a inicio</a><br>";
-                        echo "<a href='./proc/procFigs.php' class='links'>Volver a introducir datos</a><br>";
                         } else {
                             echo "<p>No se ha proporcionado el lado del cuadrado.</p>";
                         }
@@ -42,8 +43,6 @@
                         $triangulo = new Triangulo($figura, $base, $altura, $numParaPerimetro);
                         echo "<p>Área: ". $triangulo->calculaAreaTriangulo(). "</p>";
                         echo "<p>Perímetro: ". $triangulo->calculaPerimetroTriangulo(). "</p>";
-                        echo "<a href='./proc/procCierraSesion.php' class='links'>Volver a inicio</a><br>";
-                        echo "<a href='./proc/procFigs.php' class='links'>Volver a introducir datos</a><br>";
                         } else {
                             echo "<p>No se han proporcionado los lados del triángulo.</p>";
                         }
@@ -56,12 +55,11 @@
                         $circulo = new Circulo($radio);
                         echo "<p>Área: ". round($circulo->calcularAreaCirculo(), 2). "</p>";
                         echo "<p>Perímetro: ". round($circulo->calcularPerimetroCirculo(), 2). "</p>";
-                        echo "<a href='./proc/procCierraSesion.php' class='links'>Volver a inicio</a><br>";
-                        echo "<a href='./proc/procFigs.php' class='links'>Volver a introducir datos</a><br>";
                         } else {
                             echo "<p>No se ha proporcionado el radio del círculo.</p>";
                         }
                         break;
+
                     case 'rectangulo':
                         if(isset($_SESSION['base'], $_SESSION['altura'])){
                         $baseRect = $_SESSION['base'];
@@ -70,13 +68,20 @@
                         $rectangulo = new Rectangulo($figura, $baseRect, $alturaRect);
                         echo "<p>Área: ". $rectangulo->calcularAreaRectangulo(). "</p>";
                         echo "<p>Perímetro: ". $rectangulo->calcularPerimetroRectangulo(). "</p>";
-                        echo "<a href='./proc/procCierraSesion.php' class='links'>Volver a inicio</a><br>";
-                        echo "<a href='./proc/procFigs.php' class='links'>Volver a introducir datos</a><br>";
                         } else {
                             echo "<p>No se han proporcionado los lados del rectángulo.</p>";
                         }
                         break;
                 }
+
+                echo "</div>"; 
+
+                
+                echo "<div class='link-container'>";
+                echo "<a href='./proc/procCierraSesion.php' class='btn-link'>Volver a inicio</a>";
+                echo "<a href='./proc/procFigs.php' class='btn-link'>Volver a introducir datos</a>";
+                echo "</div>";
+                
             } else {
                 echo "<p>No se ha seleccionado ninguna figura</p>";
             }
