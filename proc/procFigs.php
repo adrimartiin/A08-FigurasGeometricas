@@ -55,7 +55,7 @@
                         case 'circulo':
                             echo "<input type='hidden' name='figura' value='circulo'>";
                             echo "<label><strong> Radio del Circulo:</strong></label>";
-                            echo "<input type='number' id='num' name='radio' step='0.01' placeholder='Introduce el radio del circulo' onblur='ValidaNum()'>";
+                            echo "<input type='number' id='num' name='radio' step='0.01' placeholder='Introduce el radio del circulo' onblur='ValidaNum()' value='" . (isset($_SESSION["radio"]) ? $_SESSION["radio"] : "") . "'>";
                             echo "<span id='error' class='error'></span>";
                             echo "<input type='submit' value='Calcular'>";
                             ;
@@ -64,10 +64,10 @@
                         case 'rectangulo':
                             echo "<input type='hidden' name='figura' value='rectangulo'>";
                             echo "<label><strong>Base del Rectangulo:</strong></label>";
-                            echo "<input type='number' id='base' name='base' step='0.01' placeholder='Introduce la base del rectangulo' onblur='ValidaBaseRectangulo()'><br>";
+                            echo "<input type='number' id='base' name='base' step='0.01' placeholder='Introduce la base del rectangulo' onblur='ValidaBaseRectangulo()' value='" . (isset($_SESSION["base"]) ? $_SESSION["base"] : "") . "'><br>";
                             echo "<span id='error_rectangulo' class='error'></span>";
                             echo "<label><strong> Altura del Rectangulo:</strong></label>";
-                            echo "<input type='number' id='altura' name='altura' step='0.01' placeholder='Introduce la altura del rectangulo' onblur='ValidaAlturaRectangulo()'><br>";
+                            echo "<input type='number' id='altura' name='altura' step='0.01' placeholder='Introduce la altura del rectangulo' onblur='ValidaAlturaRectangulo()' value='" . (isset($_SESSION["altura"]) ? $_SESSION["altura"] : "") . "' ><br>";
                             echo "<span id='error_rectangulo2' class='error'></span>";
                             echo "<input type='submit' value='Calcular'>";
                             
