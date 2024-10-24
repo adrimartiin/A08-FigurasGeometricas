@@ -78,7 +78,7 @@
 
                 
                 echo "<div class='link-container'>";
-                echo "<a href='./proc/procCierraSesion.php' class='btn-link'>Volver a inicio</a>";
+                echo "<a href='./proc/procCierraSesion.php' class='btn-link'>Cerrar Sesión</a>";
                 echo "<a href='./proc/procFigs.php' class='btn-link'>Volver a introducir datos</a>";
                 echo "</div>";
                 
